@@ -1,10 +1,23 @@
 body {
+    background: #CCCCCC;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
     padding: 0px;
     margin: 0px;
 }
 
+#page-frame {
+    background: #FFFFFF;
+    border-left: 1px solid #CC00CC;
+    border-right: 1px solid #CC00CC;
+    margin: auto;
+    height: 100%;
+    position: relative;
+    max-width: 800px; }
+
 /* LOGIN STYLES */
 #page-header h1 {
+    color: #FFFFFF;
+    background: #CC00CC;
     text-align: center;
     margin-bottom:140px;
 }
@@ -30,20 +43,23 @@ body {
 }
 
 .chat-room-title {
+    color: #FFFFFF;
+    background: #CC00CC;
+    border-bottom: 1px solid #CC00CC;
+    font-weight: 300;
     height:20px;
-    background:#f00;
     font-size:20px;
-    margin-left:15%;
+    text-align: center;
+    padding-bottom: 10px;
 }
 
 .chat-room-messages {
-    background:#0f0;
     position:absolute;
-    width:100%;
     bottom:32px;
-    top:67px;
+    top:80px;
     overflow:auto;
-}
+    left: 2%;
+    right: 2%; }
 
 .chat-room-messages .message .inner-message label {
     font-weight: bold;
@@ -54,21 +70,27 @@ body {
 }
 
 .chat-room-messages .message .inner-message {
+    border-radius: 4px;
     box-sizing: border-box;
     display:inline-block;
     margin-bottom:10px;
     background:#ccc;
-    padding:20px;
-    width:30%;
+    padding:10px;
+    width:60%;
     vertical-align: top;
 }
 
 .chat-room-messages .my-message {
+    color: #FFFFFF;
     text-align:right;
 }
 
 .chat-room-messages .my-message .inner-message {
-    background:#c0c;
+    background:#CC00CC;
+}
+
+.chat-room-messages .my-message .inner-message p {
+    text-align: left;
 }
 
 .textarea-wrapper {
@@ -76,15 +98,18 @@ body {
 }
 
 .chat-room-inputs {
+    border-top: 1px solid #CC00CC;
     background:#00f;
     height: 32px;
     position:absolute;
-    width:100%;
     bottom:0px;
-}
+    left: 0px;
+    right: 0px; }
 
 .chat-room-inputs textarea {
+    border: 0px;
     resize:none;
+    height: 32px;
     width:100%;
 }
 
@@ -97,5 +122,5 @@ body {
     display:block;
 }
 #page-frame.chat-mode h1 {
-    margin-bottom:10px; 
+    margin-bottom:0px; 
 }
