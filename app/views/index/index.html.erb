@@ -1,0 +1,56 @@
+<html>
+    <head>
+        <title>Rapp</title>
+        <link href="/assets/styles.css" rel="stylesheet"/>
+    </head>
+
+    <body>
+        <div id="page-frame">
+            <div id="page-header">
+                <h1>Rapp</h1>
+            </div>
+
+            <div id="page-content">
+                <div id="login">
+                    <div class="input-group">
+                        <label>User Name:</label>
+                        <input id="username-input" type="text" placeholder="raul" />
+                    </div>
+                    <div class="input-group">
+                        <label>Room Name:</label>
+                        <input id="room-name-input" type="text" placeholder="chives fans" />
+                    </div>
+                </div>
+                
+                <div id="chatroom">
+                    <div class="chat-room-title">
+                        chat-room
+                    </div>
+                    
+                    <div class="chat-room-messages">
+                        <div class="chat-room-message-list">
+                            <div class="message">
+                                <div class="inner-message">
+                                    <label>Mark</label>
+                                    <p class="body">
+                                        Aenean molestie sodales dignissim. Curabitur sed aliquet dui, ac bibendum nisl. Proin vel diam sit amet velit efficitur feugiat.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="chat-room-inputs">
+                        <div class="textarea-wrapper">
+                            <textarea></textarea>
+                        </div> 
+                    </div>        
+                </div>
+            </div>
+        </div>
+        
+        <script src="https://js.pusher.com/2.2/pusher.min.js"></script>
+        <script src="/assets/application.js" type="text/javascript"></script>
+        <script src="/assets/chat.js" type="text/javascript"></script>
+    </body>
+</html>
