@@ -93,8 +93,15 @@ body {
     text-align: left;
 }
 
+.chat-room-messages .new-user-message {
+    color: #CCCCCC;
+    font-size: 12px;
+    margin: 10px 0px;
+    text-align: center;
+}
+
 .textarea-wrapper {
-    margin-right:100px;
+    margin-right:0px;
 }
 
 .chat-room-inputs {

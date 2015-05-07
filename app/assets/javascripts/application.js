@@ -41,15 +41,15 @@ function login(){
 
 function initializeChat(username, room_name){
     $('.chat-room-title').text(room_name);
-    Rapp.Chat.subscribe(room_name, username, handleNewMessageFromOtherUser);
-
+    Rapp.Chat.subscribe(room_name, username, handleNewMessageFromOtherUser, handleNewUserJoined);
+    
     $("#page-frame").addClass("chat-mode");    
 }
 
 function setupChatRoom(){
-    var chatInput;
-    chatInput = $(".textarea-wrapper textarea");
-    chatInput.keydown(kewDownOnChatInput)
+    var chat_input;
+    chat_input = $(".textarea-wrapper textarea");
+    chat_input.keydown(kewDownOnChatInput)
 } 
     
 function kewDownOnChatInput(event){
@@ -60,18 +60,61 @@ function kewDownOnChatInput(event){
 }
 
 function submitNewMsg(){
-    // create variable for message text
-    // make sure message text is valid
-    // add message to page
-    // reset message input
     var msgtxt;
     
-    msgtxt = $("textarea").val();
-    alert(msgtxt)
+    msgtxt = $('textarea').val();
+    
+    msgtxt = $.trim(msgtxt);
+    if (!msgtxt){
+        alert("you need a msg");
+    } else {
+        Rapp.Chat.sendMessage(msgtxt);
+        displayMessage(msgtxt, Rapp.Chat._username, true);
+        $('textarea').val('');
+    }
+}
+
+function displayMessage(msgtxt, username, my_message) {
+    var message;
+    var inner_message;
+    var user_label;
+    var body;
+    
+    message = $(document.createElement('div'));
+    message.addClass('message');
+    if (my_message) {
+        message.addClass('my-message');
+    }
+    
+    inner_message = $(document.createElement('div'));
+    inner_message.addClass('inner-message');
+    message.append(inner_message);
+    
+    user_label = $(document.createElement('label'));
+    user_label.text(username);
+    inner_message.append(user_label);
+
+    body = $(document.createElement('p'));
+    body.addClass('body');
+    body.text(msgtxt);
+    inner_message.append(body);
+    
+    $('.chat-room-message-list').append(message);
 }
 
 function handleNewMessageFromOtherUser(data) {
-    console.log(data);
+    displayMessage(data.body,data.username,false);
+}
+
+function handleNewUserJoined(data) {
+    var new_user_message;
+    
+    data.username;
+    new_user_message = $(document.createElement('div'));
+    new_user_message.addClass('new-user-message');
+    new_user_message.text(data.username+' joined the room');
+    
+    $('.chat-room-message-list').append(new_user_message);
 }
 
 
