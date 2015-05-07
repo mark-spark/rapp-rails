@@ -61,11 +61,6 @@ body {
     left: 2%;
     right: 2%; }
 
-.chat-room-message-list {
-    bottom: 0px;
-    position: absolute;
-    width: 100%; }
-
 
 .chat-room-messages .message .inner-message label {
     font-weight: bold;
