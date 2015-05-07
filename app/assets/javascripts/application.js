@@ -139,3 +139,9 @@ var juan = multiply(58936,395824);
 alert(twelve);
 alert(juan);
 */
+
+/*
+while(true) {
+    alert('This loop will never end');
+}
+*/
