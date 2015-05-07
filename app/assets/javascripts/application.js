@@ -44,6 +44,7 @@ function initializeChat(username, room_name){
     Rapp.Chat.subscribe(room_name, username, handleNewMessageFromOtherUser, handleNewUserJoined);
     
     $("#page-frame").addClass("chat-mode");    
+    $("#login .input-group input").blur();
 }
 
 function setupChatRoom(){
